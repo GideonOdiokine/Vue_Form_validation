@@ -1,40 +1,20 @@
 <template>
-  <h2>Gidi Reaction Timer</h2>
-  <button @click="start" :disabled="isPlaying">Play</button>
-  <Block v-if="isPlaying" :delay="delay" @end="endGame" />
-  <Result v-if="showScore" :score="score" />
+  <h2>Vue Forms and Data Binding</h2>
+  <SignupForm />
 </template>
 
 <script>
-import Block from "./components/Block.vue";
-import Result from "./components/Result.vue";
+import SignupForm from "./components/SignupForm.vue";
 
 export default {
   name: "App",
   components: {
-    Block,
-    Result,
+    SignupForm,
   },
   data() {
-    return {
-      isPlaying: false,
-      delay: null,
-      score: null,
-      showScore: false,
-    };
+    return {};
   },
-  methods: {
-    start() {
-      this.showScore = false;
-      this.delay = 2000 + Math.random() * 5000;
-      this.isPlaying = true;
-    },
-    endGame(reaction) {
-      this.score = reaction;
-      this.isPlaying = false;
-      this.showScore = true;
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -46,5 +26,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body {
+  margin: 0;
+  background: #eee;
 }
 </style>

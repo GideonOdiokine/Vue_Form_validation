@@ -28,7 +28,7 @@
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
   <p>Terms: {{ isChecked }}</p>
-  <p>Names: {{ names }}</p>
+  <h6>Names: {{ names }}</h6>
 </template>
 
 <script>

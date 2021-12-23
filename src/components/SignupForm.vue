@@ -14,8 +14,8 @@
 
     <labal>Skills: </labal>
     <input type="text" v-model="tempSkill" @keyup.alt="addSkill" />
-    <div v-for="skill in skills" :key="skill">
-      {{ skill }}
+    <div v-for="skill in skills" :key="skill" class="pill">
+      <span @click="deleteSkill(skill)">{{ skill }}</span>
     </div>
 
     <div class="terms">
@@ -51,6 +51,11 @@ export default {
         }
         this.tempSkill = "";
       }
+    },
+    deleteSkill(skill) {
+      this.skills = this.skills.filter((item) => {
+        return skill !== item;
+      });
     },
   },
 };
@@ -100,5 +105,17 @@ input[type="checkbox"] {
   margin: 0 10px 0 0;
   position: inherit;
   top: 12px;
+}
+.pill {
+  display: inline-block;
+  margin: 20px 10px 0 0;
+  padding: 6px 12px;
+  background: #eee;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: #777;
 }
 </style>

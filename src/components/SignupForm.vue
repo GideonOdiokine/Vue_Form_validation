@@ -72,6 +72,14 @@ export default {
         this.password.length > 5
           ? ""
           : "Password must be at least 6 character long";
+
+      if (!this.passwordError) {
+        console.log(`Email:  ${this.email}`);
+        console.log(`Password:  ${this.password}`);
+        console.log(`Terms:  ${this.isChecked}`);
+        console.log(`Role:  ${this.role}`);
+        console.log(`Skills:`, this.skills);
+      }
     },
   },
 };
